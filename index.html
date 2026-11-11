@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minecraft Server-Icon erstellen – kostenlos, im Browser</title>
+<meta name="description" content="Minecraft Server-Icon erstellen: Bild zuschneiden oder Schriftzug wählen, Vorschau in der Serverliste ansehen und server-icon.png mit 64 x 64 Pixeln speichern.">
+<link rel="icon" href="data:,">
+<link rel="canonical" href="https://ventrohosting.com/tools/minecraft-server-icon">
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#0B0F17;color:#e9eef7;font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:32px 16px 48px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 12px}
+.lead{color:#c7d0e0;max-width:760px;margin:0 0 28px}
+a{color:#19d3b6}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.vhp-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
+.vhp-btn--primary{background:#19d3b6;border-color:#19d3b6;color:#06231f}
+.vhp-eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#19d3b6}
+footer{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:20px;color:#aab4c8;font-size:15px}
+.vhp-eyebrow { display: inline-flex; align-items: center; gap: 10px; font: 600 12.5px Inter, sans-serif; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(0, 217, 255); }
+.vhp-eyebrow::before { content: ""; width: 22px; height: 2px; background: rgb(0, 217, 255); display: block; }
+.vhp-btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font: 600 16px Inter, sans-serif; padding: 15px 26px; border-radius: 14px; transition: transform 0.2s, filter 0.2s, border-color 0.2s, background 0.2s; }
+.vhp .vhp-btn--primary { background: linear-gradient(135deg, rgb(0, 217, 255), rgb(95, 233, 255)); color: rgb(4, 20, 26); box-shadow: rgba(0, 217, 255, 0.7) 0px 14px 40px -14px; }
+.vhp .vhp-btn--primary:hover { filter: brightness(1.1); transform: translateY(-2px); color: rgb(4, 20, 26); }
+.vhp .vhp-btn--ghost { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.16); color: rgb(245, 247, 251); }
+.vhp .vhp-btn--ghost:hover { border-color: rgb(0, 217, 255); background: rgba(255, 255, 255, 0.1); color: rgb(245, 247, 251); }
+.vhp .vhp-btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; }
+:root { --vx-bg: #0B0F17; --vx-bg-2: #0B0F17; --vx-surface: #121A27; --vx-surface-2: #151F2E; --vx-line: rgba(255, 255, 255, .10); --vx-line-strong: rgba(255, 255, 255, .18); --vx-text: #eaeefb; --vx-muted: #a9b3d0; --vx-faint: #7f8aac; --vx-teal: #00D9FF; --vx-teal-2: #5fe9ff; --vx-violet: #8054FF; --vx-violet-2: #a78bff; --vx-warn: #ffd34d; --vx-grad: linear-gradient(135deg, #00D9FF 0%, #8054FF 100%); --vx-radius: 16px; --vx-radius-sm: 10px; --vx-shadow: 0 18px 50px rgba(0, 0, 0, .45); --vx-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; --vx-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; --vx-header-h: 68px; --bg-body: var(--vx-bg); --bg-card: var(--vx-surface); --bg-card-hover: var(--vx-surface-2); --text-main: var(--vx-text); --text-muted: var(--vx-muted); --primary-color: var(--vx-teal); --primary-hover: var(--vx-teal-2); --secondary-color: var(--vx-violet); --border-color: var(--vx-line); }
+.vht-card { border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 18px; padding: 22px; background: rgba(255, 255, 255, 0.04); }
+.vht-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: start; }
+.vht-field { display: grid; gap: 6px; margin-bottom: 16px; }
+.vht-field > label, .vht-field > span.vht-l { font-weight: 700; font-size: 15px; }
+.vht-field small { color: rgb(170, 180, 200); font-size: 13.5px; line-height: 1.45; }
+.vht-field input[type="text"], .vht-field input[type="number"], .vht-field select, .vht-out textarea { width: 100%; box-sizing: border-box; padding: 11px 12px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(8, 12, 24, 0.7); color: rgb(255, 255, 255); font: inherit; min-height: 44px; }
+.vht-field input[type="range"] { width: 100%; min-height: 44px; }
+.vht-field input:focus-visible, .vht-field select:focus-visible, .vht-out textarea:focus-visible, .vht-btn:focus-visible { outline: rgb(25, 211, 182) solid 2px; outline-offset: 2px; }
+.vht-check { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; }
+.vht-check input { margin-top: 4px; width: 20px; height: 20px; flex: 0 0 auto; }
+.vht-out textarea { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13.5px; line-height: 1.5; min-height: 340px; resize: vertical; }
+.vht-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+.vht-note { color: rgb(170, 180, 200); font-size: 14px; line-height: 1.55; }
+.vht-icon-big { width: 192px; height: 192px; image-rendering: pixelated; border-radius: 6px; background: repeating-conic-gradient(rgb(42, 49, 64) 0deg, rgb(42, 49, 64) 25%, rgb(29, 35, 48) 0deg, rgb(29, 35, 48) 50%) 0px 0px / 16px 16px; }
+.vht-srv { display: flex; gap: 10px; align-items: flex-start; background: rgb(27, 27, 31); border: 2px solid rgb(58, 58, 66); border-radius: 6px; padding: 8px; font: 15px / 1.3 ui-monospace, Menlo, Consolas, monospace; color: rgb(255, 255, 255); }
+.vht-srv canvas { width: 64px; height: 64px; flex: 0 0 auto; }
+.vht-srv small { display: block; color: rgb(168, 168, 168); font-size: 14px; }
+.vht-field input[type="file"] { color: rgb(201, 209, 222); max-width: 100%; }
+.vht-field input[type="color"] { width: 64px; height: 44px; border: 0px; background: none; padding: 0px; }
+.vht-colors { display: flex; gap: 14px; align-items: center; }
+</style>
+</head>
+<body>
+<main class="wrap">
+<h1>Minecraft Server-Icon erstellen</h1>
+<p class="lead">Mach aus einem Bild oder einem Schriftzug das Icon für die Serverliste: fertig als server-icon.png mit 64 × 64 Pixeln. Dein Bild bleibt in deinem Browser.</p>
+<div class="vht-grid" data-vh-icon="">
+  <form class="vht-card" onsubmit="return false" aria-label="Icon gestalten">
+    <div class="vht-field"><label for="i-file">Eigenes Bild</label><input id="i-file" type="file" accept="image/png,image/jpeg,image/gif,image/webp"><small>PNG, JPG, GIF oder WebP. Das Bild wird nicht hochgeladen, alles passiert in deinem Browser.</small></div>
+    <fieldset style="border:0;padding:0;margin:0" data-i-img="" disabled="">
+      <div class="vht-field"><label for="i-zoom">Zoom</label><input id="i-zoom" type="range" min="1" max="4" step="0.05" value="1"></div>
+      <div class="vht-field"><label for="i-x">Position links/rechts</label><input id="i-x" type="range" min="0" max="100" value="50"></div>
+      <div class="vht-field"><label for="i-y">Position oben/unten</label><input id="i-y" type="range" min="0" max="100" value="50"></div>
+      <label class="vht-check"><input id="i-smooth" type="checkbox" checked=""><span>Weich verkleinern (für Fotos; aus für Pixel-Art)</span></label>
+      <button type="button" class="vhp-btn vhp-btn--ghost vht-btn" id="i-reset">Bild entfernen</button>
+    </fieldset>
+    <fieldset style="border:0;padding:0;margin:16px 0 0" data-i-txt="">
+      <div class="vht-field"><label for="i-text">Ohne Bild: Text (1 bis 3 Zeichen)</label><input id="i-text" type="text" maxlength="3" value="VH"></div>
+      <div class="vht-field"><span class="vht-l">Farbverlauf</span><div class="vht-colors"><input id="i-c1" type="color" value="#00d9ff" aria-label="Farbe oben links"><input id="i-c2" type="color" value="#8054ff" aria-label="Farbe unten rechts"></div></div>
+    </fieldset>
+  </form>
+  <div class="vht-card vht-out">
+    <span class="vhp-eyebrow">Vorschau</span>
+    <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-end;margin:10px 0 16px"><canvas id="i-big" class="vht-icon-big" width="192" height="192" role="img" aria-label="Icon, vergrößert"></canvas><canvas id="i-small" width="64" height="64" hidden=""></canvas></div>
+    <div class="vht-field"><label for="i-name">Servername für die Vorschau</label><input id="i-name" type="text" value="Mein Minecraft-Server" maxlength="40"></div>
+    <div class="vht-srv" aria-hidden="true"><canvas id="i-list" width="128" height="128"></canvas><div><span id="i-prev-name">Mein Minecraft-Server</span><small>Ein Minecraft Server</small></div></div>
+    <div class="vht-actions"><button type="button" class="vhp-btn vhp-btn--primary vht-btn" id="i-dl">server-icon.png herunterladen</button></div>
+    <p class="vht-note" id="i-status" role="status" aria-live="polite" style="margin:10px 0 0"></p>
+  </div>
+</div>
+<footer>
+<p>Dieses Tool gibt es auch mit Anleitung und Beispielen auf <a href="https://ventrohosting.com/tools/minecraft-server-icon">Minecraft Server-Icon erstellen</a> von <a href="https://ventrohosting.com/">VentroHosting</a>, dazu weitere <a href="https://ventrohosting.com/tools">kostenlose Minecraft-Tools</a>.</p>
+<p>Open Source (MIT) · <a href="https://github.com/ventrohosting/minecraft-server-icon-maker">Quellcode auf GitHub</a> · Läuft komplett im Browser, keine Daten werden gesendet.</p>
+</footer>
+</main>
+<script src="tools.js"></script>
+</body>
+</html>
